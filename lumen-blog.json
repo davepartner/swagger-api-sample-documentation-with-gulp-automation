@@ -1,0 +1,53 @@
+{
+ "swagger": "2.0",
+ "info": {
+  "title": "Lumen blog API",
+  "description": "Move your app forward with the Uber API",
+  "version": "1.0.0"
+ },
+ "host": "api.uber.com",
+ "schemes": [
+  "https"
+ ],
+ "basePath": "/v1",
+ "produces": [
+  "application/json"
+ ],
+ "paths": {
+  "/products": {
+   "get": {
+    "summary": "Product Types",
+    "description": "The Products endpoint returns information about the *Uber* products\noffered at a given location. The response includes the display name\nand other details about each product, and lists the products in the\nproper display order.\n",
+    "parameters": [
+     {
+      "name": "latitude",
+      "in": "query",
+      "description": "Latitude component of location.",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     },
+     {
+      "name": "longitude",
+      "in": "query",
+      "description": "Longitude component of location.",
+      "required": true,
+      "type": "number",
+      "format": "double"
+     }
+    ],
+    "tags": [
+     "Products"
+    ],
+    "responses": {
+     "200": {
+      "description": "An array of products"
+     },
+     "default": {
+      "description": "Unexpected error"
+     }
+    }
+   }
+  }
+ }
+}
